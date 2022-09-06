@@ -7,7 +7,7 @@ import { faTelegram } from '@fortawesome/free-brands-svg-icons'
 import { faPhone } from '@fortawesome/free-solid-svg-icons'
 import { faLocation } from '@fortawesome/free-solid-svg-icons'
 import { faMobilePhone } from '@fortawesome/free-solid-svg-icons'
-import { faHeart } from '@fortawesome/free-regular-svg-icons'
+import { faHeart } from '@fortawesome/free-solid-svg-icons'
 import App from './App.vue'
 import router from './router'
 
