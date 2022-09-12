@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <Banner></Banner>
+    <Carousel></Carousel>
     <Searchbar></Searchbar>
     <Productslist></Productslist>
     <Cart></Cart>
@@ -10,7 +10,7 @@
 
 <script>
 // @ is an alias to /src
-import Banner from '@/components/Banner.vue'
+import Carousel from '@/components/Carousel.vue'
 import SearchBar from '@/components/Searchbar.vue'
 import Productslist from '@/components/Productslist.vue'
 import Cart from '@/components/Cart.vue'
@@ -22,7 +22,7 @@ import Searchbar from '@/components/Searchbar.vue';
 export default {
   name: 'HomeView',
   components: {
-    Banner,
+    Carousel,
     SearchBar,
     Productslist,
     Cart,
