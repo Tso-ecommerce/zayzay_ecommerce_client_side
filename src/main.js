@@ -10,14 +10,13 @@ import { faMobilePhone } from '@fortawesome/free-solid-svg-icons'
 import { faHeart } from '@fortawesome/free-solid-svg-icons'
 import App from './App.vue'
 import router from './router'
-import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import 'bootstrap'
 import "bootstrap/dist/js/bootstrap.js"
 
-library.add(faFacebook , faTelegram, faPhone , faLocation , faMobilePhone ,faHeart)
+library.add(faFacebook, faTelegram, faPhone, faLocation, faMobilePhone, faHeart)
 
 createApp(App)
-.component('icon', FontAwesomeIcon)
-.use(router)
-.mount('#app')
+    .component('icon', FontAwesomeIcon)
+    .use(router)
+    .mount('#app')
