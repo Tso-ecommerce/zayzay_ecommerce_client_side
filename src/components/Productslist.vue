@@ -12,15 +12,16 @@
         <button class="btndesign">Fruits</button>
       </div>
 
-      <div class="row col-12 pt-2 parentlists">
-        <div class="col-sm-6 col-md-4 col-lg-3" v-for="product in products" :key="product.id">
-          
-          <div class="mb-2 productslist">
-            <img :src="product.image" class="img pt-2" alt="productimage">
-            <div class="label">
-              <div>{{product.name}}</div>
-              <div style="color:blue">{{product.price}} Kyats <span class="carticons"></span></div>
-            </div>
+      
+      <div class="row pt-2 lists">
+        <div class="col-6 col-sm-4 col-lg-3" v-for="product in products" :key="product.id">
+            
+          <div class="mb-2 listitems">
+              <img :src="product.image" class="img pt-2" alt="productimage">
+              <div class="label">
+                <div>{{product.name}}</div>
+                <div style="color:blue">{{product.price}} Kyats <span class="carticons"></span></div>
+              </div>
           </div>
 
         </div>
@@ -63,7 +64,6 @@ export default {
  
 .parentcontainer{
   width: 100%;
-  /* background-color: aqua; */
 
   display: flex;
   justify-content: center;
@@ -71,14 +71,12 @@ export default {
 }
 
 .container{
-  width: 90%;
-  background: steelblue;
+  width: 100%;
 }
 
 .catagory{
   width: 100%;
   height: 35px;
-  background: pink;
 
   font-size: 16px;
   text-align: left;
@@ -90,7 +88,6 @@ export default {
 .button{
   width: 100%;
   height: 50px;
-  background-color: red;
 
   display: flex;
   justify-content: space-between;
@@ -108,32 +105,16 @@ export default {
 .img{
   width: 200px;
   height: 150px;
-
-  padding: 0px;
-  margin:0;
-  
   border-radius: 25px;
-}
-.parentlists{
-  width :100%;
-  background: green;
-}
-.productslist{
-  width: 100%;
-  background-color: tomato;
-
-  margin-right: 0;
 }
 
 .label{
   width: 100%;
   font-size: 18px;
   font-weight: 600;
-  background: yellow;
   text-align: left;
 
-  padding-top: 5px;
-  padding-left: 5px;
+  padding:5px 50px 0 20px;
 
   position: relative;
 }
@@ -142,10 +123,34 @@ export default {
   background: grey;
   padding: 15px 15px;
   margin-right: 5px;
-  /* float: right; */
 
   position: absolute;
   top: 20px;
-  right: 5px;
+  right: 15px;
+}
+
+@media only screen and (max-width: 400px) {
+  .container{
+    font-size: 12px;
+    
+  }
+  .btndesign{
+    padding: 5px 15px;
+    margin: 0 10px;
+  }
+  .img{
+    width:100px;
+    height: 75px;
+    border-radius: 15px;
+    padding: 0;
+    margin: 0;
+  }
+  .label{
+    font-size: 13px;
+  }
+ 
+  .carticons{
+    padding: 10px 10px;
+  }
 }
 </style>
