@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <Carousel class="carousel" v-slot="{currentSlide}">
+    <Carousel :navigation="true" :pagination="true" :timeout="3000" :startAutoPlay="true" class="carousel" v-slot="{currentSlide}">
       <Slide v-for="(slide,index) in carouselSlides" :key="index">
         <div v-show="currentSlide === index +1" class="slide-info">
           <img :src="require(`../assets/${slide}.jpg`)" alt=""> 
@@ -27,7 +27,9 @@ import Searchbar from '@/components/Searchbar.vue';
 
 
 export default {
+
   name: 'HomeView',
+
   components: {
     Carousel,
     Slide,

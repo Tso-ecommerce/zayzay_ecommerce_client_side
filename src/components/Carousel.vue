@@ -3,7 +3,7 @@
     <slot :currentSlide="currentSlide"/>
 
     <!-- Navigation -->
-    <div class="navigate">
+    <div v-if="navEnabled" class="navigate">
       <div class="toggle-page left">
         <i @click="prevSlide" class="fas fa-chevron-left"></i>
       </div>
@@ -11,12 +11,13 @@
       <div class="toogle-page right">
         <i @click="nextSlide" class="fas fa-chevron-right"></i>
       </div>
-
-      <!-- Pagination -->
-        <div class="pagination">
-          <span v-for="(slide,index) in getSlideCount" :key="index" :class="{active:index + 1 === currentSlide }">{{slide}}</span>
-        </div>
     </div>
+
+    <!-- Pagination -->
+    <div v-if="paginationEnabled" class="pagination">
+        <span @click="goToSlide(index)" v-for="(slide,index) in getSlideCount" :key="index" :class="{active:index + 1 === currentSlide }"></span>
+    </div>
+    
   </div>
 </template>
 
@@ -24,10 +25,21 @@
 import {ref, onMounted} from "vue";
 
 export default {
-  setup() {
+
+  props:['startAutoPlay','timeout','navigation','pagination'],
+
+  setup(props) {
     const currentSlide = ref(1);
 
     const getSlideCount = ref(null);
+
+    const autoPlayEnabled = ref(props.startAutoPlay === undefined? true : props.startAutoPlay);
+
+    const timeoutDuration = ref(props.timeout === undefined? 3000 : props.timeout);
+
+    const paginationEnabled = ref(props.pagination === undefined? true : props.pagination);
+
+    const navEnabled = ref(props.navigation === undefined? true : props.navigation);
 
     //next slide
 
@@ -36,7 +48,7 @@ export default {
         currentSlide.value += 1;
         return;
       }
-      currentSlide.value +=1;
+      currentSlide.value += 1;
     }
 
     //prev slide
@@ -49,11 +61,26 @@ export default {
       currentSlide.value -= 1;
     }
 
+    const goToSlide = (index) =>{
+      currentSlide.value = index + 1
+    }
+
+    //autoplay
+    const autoPlay = () =>{
+      setInterval(()=>{
+        nextSlide();
+      },timeoutDuration.value);
+    };
+
+    if (autoPlayEnabled.value){
+      autoPlay();
+    }
+
     onMounted(()=>{
       getSlideCount.value = document.querySelectorAll(".slide").length;
     })
 
-    return {currentSlide,nextSlide,prevSlide,getSlideCount};
+    return {currentSlide,nextSlide,prevSlide,getSlideCount,goToSlide,paginationEnabled,navEnabled};
   },
 }
 </script>
