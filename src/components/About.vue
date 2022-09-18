@@ -5,7 +5,7 @@
         <h1 class="d-flex justify-content-start">About</h1>
         
         <div class="content sect">
-            <img src="../assets/logo.png" alt="aboutImage" />
+            <!-- <img src="../assets/logo.png" alt="aboutImage" /> -->
             <p class="about-content">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus ad molestias nisi suscipit labore! A, nemo saepe quaerat, architecto officia exercitationem sed placeat dolor quis nihil repudiandae illo obcaecati repellendus.
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur consectetur enim quidem doloribus at velit incidunt esse sed ipsa distinctio impedit ab, perspiciatis totam quisquam ex sequi, laudantium provident voluptate.

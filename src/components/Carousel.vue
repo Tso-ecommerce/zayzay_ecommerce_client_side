@@ -4,7 +4,7 @@
 
     <!-- Navigation -->
     <div class="navigate">
-      <div class="toogle-page left">
+      <div class="toggle-page left">
         <i @click="prevSlide" class="fas fa-chevron-left"></i>
       </div>
 
@@ -60,10 +60,11 @@ export default {
 
 <style>
   .navigate{
-    padding: 0 16px;
+    padding:0 20px;
     height: 100%;
     width: 100%;
     position: absolute;
+    display: flex;
     justify-content: center;
     align-items: center;
   }
@@ -71,21 +72,23 @@ export default {
   .toggle-page{
     display: flex;
     flex: 1;
+    /* position: absolute; */
   }
 
   .right{
     justify-content: flex-end;
   }
 
-  .i{
+  .left i,.right i{
     cursor: pointer;
     display: flex;
+    justify-content: center;
     align-items: center;
     border-radius: 50%;
-    width: 40%;
-    height: 40%;
+    width: 40px;
+    height: 40px;
     background-color: #6347c7;
-    color: #fff;
+    color: black;
   }
 
   .pagination{

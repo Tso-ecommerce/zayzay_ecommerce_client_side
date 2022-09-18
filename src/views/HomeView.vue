@@ -3,14 +3,14 @@
     <Carousel class="carousel" v-slot="{currentSlide}">
       <Slide v-for="(slide,index) in carouselSlides" :key="index">
         <div v-show="currentSlide === index +1" class="slide-info">
-          <img :src="required(`../img/${slide}.jpg`)" alt=""> 
+          <img :src="require(`../assets/${slide}.jpg`)" alt=""> 
         </div>
       </Slide>
     </Carousel>
-    <Searchbar></Searchbar>
+    <!-- <Searchbar></Searchbar>
     <Productslist></Productslist>
     <Cart></Cart>
-    <About></About>
+    <About></About> -->
   </div>
 </template>
 
@@ -57,7 +57,7 @@ setup() {
   }
 
   .slide-info{
-    position: relative;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -68,7 +68,7 @@ setup() {
   img{
     min-width: 100%;
     height: 100%;
-    object-fit: cover;
+    /* object-fit: cover; */
   }
     
   
